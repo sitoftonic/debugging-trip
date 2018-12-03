@@ -134,7 +134,13 @@ void goPrev(List * l, int mode) {
 }
 
 void goPrevTimes(List * l, int mode, int times) {
-	
+	int i;
+	for (i = 1; i < times; i++) {
+		if (isStart(*l, mode)) {
+			break;
+		}
+		goPrev(l, mode);
+	}
 }
 
 int isEnd(List l, int mode) {
