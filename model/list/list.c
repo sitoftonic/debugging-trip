@@ -4,7 +4,28 @@
 
 
 List create() {
-	
+	List l;
+
+	int i;
+
+	//Demanem memòria pel primer fantasma
+	l.first = (Node *) malloc (sizeof (Node));
+
+	//Demanem memòria pel darrer fantasma
+	l.last = (Node *) malloc (sizeof (Node));
+
+	//Inicialitzacions
+	for (i = 0; i < MAX_SORTING; i++) {
+		l.poi[i] = l.first;
+		l.first -> next[i] = l.last;
+		l.first -> prev[i] = NULL;
+		l.last -> next[i] = NULL;
+		l.last -> prev[i] = l.first;
+	}
+
+	l.n = 0;
+
+	return l;
 }
 
 void insert(List * l, Destination d) {
