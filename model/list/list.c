@@ -87,7 +87,7 @@ void insert(List * l, Destination d) {
 }
 
 Destination readPoi(List l, int mode) {
-	
+	return l.poi[mode]->dest;
 }
 
 void removePoi(List * l, int mode) {
