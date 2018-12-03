@@ -112,7 +112,7 @@ void goStart(List * l, int mode) {
 }
 
 void goEnd(List * l, int mode) {
-	
+	l -> poi[mode] = l -> last -> prev[mode];
 }
 
 void goNext(List * l, int mode) {
@@ -124,7 +124,7 @@ void goNextTimes(List * l, int mode, int times) {
 }
 
 void goPrev(List * l, int mode) {
-	
+	l -> poi[mode] = l -> poi[mode] -> prev[mode];
 }
 
 void goPrevTimes(List * l, int mode, int times) {
@@ -136,7 +136,7 @@ int isEnd(List l, int mode) {
 }
 
 int isStart(List l, int mode) {
-	
+	return l.poi[mode] == l.first;
 }
 
 int isEmpty(List l) {
