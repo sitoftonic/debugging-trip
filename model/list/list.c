@@ -108,7 +108,7 @@ void removePoi(List * l, int mode) {
 }
 
 void goStart(List * l, int mode) {
-	
+	l -> poi[mode] = l -> first -> next[mode];
 }
 
 void goEnd(List * l, int mode) {
@@ -116,7 +116,7 @@ void goEnd(List * l, int mode) {
 }
 
 void goNext(List * l, int mode) {
-	
+	l -> poi[mode] = l -> poi[mode] -> next[mode];
 }
 
 void goNextTimes(List * l, int mode, int times) {
@@ -132,7 +132,7 @@ void goPrevTimes(List * l, int mode, int times) {
 }
 
 int isEnd(List l, int mode) {
-	
+	return l.poi[mode] == l.last;
 }
 
 int isStart(List l, int mode) {
