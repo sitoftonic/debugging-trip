@@ -157,4 +157,10 @@ int isEmpty(List l) {
 
 void destroy(List * l) {
 
+	goStart(l, 0);
+
+	while (!isEmpty(*l)) {
+		removePoi(l, 0);
+	}
+
 }
