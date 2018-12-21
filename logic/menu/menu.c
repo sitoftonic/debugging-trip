@@ -46,16 +46,17 @@ char * readUserString() {
 
 	scanf("%c", &tmp);
 	do {
-		i++[ret] = tmp;
+		ret[i] = tmp;
+		i++;
 
 		if (i >= size) {
 			size *= 2;
-			resize(&ret, size);
+			resize(ret, size);
 		}
 		scanf("%c", &tmp);
 	} while (tmp != '\n');
 
-	resize(&ret, i + 1);
+	ret[i] = '\0';
 
 	return ret;
 }

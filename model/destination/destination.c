@@ -177,16 +177,16 @@ char * readString(FILE * file) {
 
 	fscanf(file, "%c", &tmp);
 	do {
-		i++[ret] = tmp;
-
+		ret[i] = tmp;
+		i++;
 		if (i >= size) {
 			size *= 2;
-			resize(&ret, size);
+			resize(ret, size);
 		}
 		fscanf(file, "%c", &tmp);
 	} while(tmp != '\n');
 
-	resize(&ret, i + 1);
+	ret[i] = '\0';
 
 
 	return ret;
