@@ -14,6 +14,8 @@
 #define SOUTH 2
 #define WEST 3
 
+#define MAX_INTEGER 32000
+
 double haversine(double ang) {
 	return pow(sin(ang / 2), 2.0);
 }
@@ -90,7 +92,7 @@ double travelThroughAltitude(double ** travelAltitude, int i, int j, int n) {
 	}
 
 	int newI = i, newJ = j, min = NORTH;
-	double minAlt = 0;
+	double minAlt = MAX_INTEGER;
 
 	for (int k = 0; k < DIRECTIONS; k++) {
 		double alt = checkAltitudeInDirection(travelAltitude, i, j, k, n);
@@ -103,7 +105,7 @@ double travelThroughAltitude(double ** travelAltitude, int i, int j, int n) {
 
 	advanceInDirection(&newI, &newJ, min);
 
-	return travelAltitude[i][j] + travelThroughAltitude(travelAltitude, i, j, n);
+	return travelAltitude[i][j] + travelThroughAltitude(travelAltitude, newI, newJ, n);
 }
 
 // Retorna una estimació del temps de viatge des de BCN segons l'altitud
@@ -154,7 +156,6 @@ char ** mapAltitudeTravel(Destination dest) {
 			map[i][j] = '#';
 		}
 	}
-
 	mapAltitude(dest.travelAltitude, map, 0, 0, dest.n);
 
 	return map;
