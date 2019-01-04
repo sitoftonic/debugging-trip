@@ -51,8 +51,7 @@ void insert(List * l, Destination d) {
 			if (l->poi[i] == l->last) {
 				break;
 			}
-
-			//Les condicions per saltar un element depenen del mode d'ordenació
+            //Les condicions per saltar un element depenen del mode d'ordenació
 			switch (i) {
 				case BY_NAME:
 					condicio = strcmp(d.name, l->poi[i]->dest.name) > 0;
@@ -73,7 +72,6 @@ void insert(List * l, Destination d) {
 			}
 			//Seguim saltant mentre no arribem al darrer element i es segueixi complint la condició de salt
 		} while (condicio);
-
 		//Apuntem els punters del nou node
 		nou->prev[i] = l->poi[i]->prev[i];
 		nou->next[i] = l->poi[i];
@@ -102,8 +100,10 @@ void removePoi(List * l, int mode) {
 
 			aux -> prev[i] -> next[i] = aux -> next[i];
 			aux -> next[i] -> prev[i] = aux -> prev[i];
-		}
-		l -> n--;
+        }
+        freeAll(aux->dest);
+        free(aux);
+        l -> n--;
 	}
 }
 
