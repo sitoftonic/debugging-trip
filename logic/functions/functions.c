@@ -99,6 +99,7 @@ void readNewFile(List * l) {
 	if (f != NULL) {
 		*l = create();
 		readWholeFile(f, l);
+		fclose(f);
 	} else {
 		printFileError(input);
 	}
