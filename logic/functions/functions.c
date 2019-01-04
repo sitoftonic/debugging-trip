@@ -54,13 +54,13 @@ void planTrip(List *l){
     } while (option < 1 || option > 2);
 
 	goStart(l,0);
-	goNextTimes(l, 0, destination-1);
+	goNextTimes(l, 0, destination);
 	d = readPoi(*l,0);
 
     switch (option) {
         case 1:
 
-        	printAverage(getAverageHotelPrice(d));
+            printAverage(getAverageHotelPrice(d));
 
         	qsort(d.hotelPrices, d.nHotels, sizeof(double), comparePrices);
 
