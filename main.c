@@ -2,8 +2,6 @@
 #include <stdlib.h>
 #include "logic/menu/menu.h"
 #include "logic/functions/functions.h"
-#include "model/list/list.h"
-#include "model/destination/destination.h"
 
 #define PATH "data/mainDatabase.txt"
 
