@@ -5,7 +5,7 @@
 #include "model/list/list.h"
 #include "model/destination/destination.h"
 
-#define PATH "data/mainDatabase.nymal"
+#define PATH "data/mainDatabase.txt"
 
 int main() {
 	int option;
