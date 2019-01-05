@@ -73,6 +73,8 @@ void planTrip(List *l){
             }
             free(map);
             break;
+		default:
+			break;
     }
 
 }
