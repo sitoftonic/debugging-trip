@@ -189,6 +189,7 @@ char * readString(FILE * file) {
 	return ret;
 }
 
+// Retorna una destinació agafant les dades del fitxer database
 Destination readFromFile(FILE * file) {
 	Destination d;
 	int i = 0, j = 0;
