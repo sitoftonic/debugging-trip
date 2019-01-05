@@ -3,6 +3,7 @@
 #include <memory.h>
 
 
+// Funció que crea una llista i la retorna
 List create() {
 	List l;
 
@@ -28,6 +29,7 @@ List create() {
 	return l;
 }
 
+// Funció que insereix una destinació a una llista
 void insert(List * l, Destination d) {
 	int i;
 	int condicio;
@@ -84,10 +86,12 @@ void insert(List * l, Destination d) {
 	l -> n++;
 }
 
+// Funció que retorna la destinació que hi ha en el POI en un mode determinat
 Destination readPoi(List l, int mode) {
 	return l.poi[mode]->dest;
 }
 
+// Funció que elimina el POI en un mode determinat
 void removePoi(List * l, int mode) {
 	// Comprovem que no estigui buida ni estiguem a un fantasma
 	if (!isEmpty(*l) && l -> poi[mode] != l -> last && l -> poi[mode] != l -> first) {
@@ -107,18 +111,22 @@ void removePoi(List * l, int mode) {
 	}
 }
 
+// Funció que mou el POI fins al principi de la llista
 void goStart(List * l, int mode) {
 	l -> poi[mode] = l -> first -> next[mode];
 }
 
+// Funció que mou el POI fins al final de la llista
 void goEnd(List * l, int mode) {
 	l -> poi[mode] = l -> last -> prev[mode];
 }
 
+// Funció que mou el POI fins al següent node
 void goNext(List * l, int mode) {
 	l -> poi[mode] = l -> poi[mode] -> next[mode];
 }
 
+// Funció que mou el POI fins al següent node times cops
 void goNextTimes(List * l, int mode, int times) {
 	int i;
 	for (i = 1; i < times; i++) {
@@ -129,10 +137,12 @@ void goNextTimes(List * l, int mode, int times) {
 	}
 }
 
+// Funció que mou el POI fins a l'anterior node
 void goPrev(List * l, int mode) {
 	l -> poi[mode] = l -> poi[mode] -> prev[mode];
 }
 
+// Funció que mou el POI fins a l'anterior node times cops
 void goPrevTimes(List * l, int mode, int times) {
 	int i;
 	for (i = 1; i < times; i++) {
@@ -143,18 +153,22 @@ void goPrevTimes(List * l, int mode, int times) {
 	}
 }
 
+// Funció que determina si el POI es troba en la última posició de la llista
 int isEnd(List l, int mode) {
 	return l.poi[mode] == l.last;
 }
 
+// Funció que determina si el POI es troba en la primera posició de la llista
 int isStart(List l, int mode) {
 	return l.poi[mode] == l.first;
 }
 
+// Funció que determina si la llista està buida
 int isEmpty(List l) {
 	return *(l.first -> next) == l.last;
 }
 
+// Funció que destrueix la llista i tots els seus nodes
 void destroy(List * l) {
 
 	goStart(l, 0);
