@@ -1,6 +1,5 @@
 #include <math.h>
 #include <stdlib.h>
-#include <memory.h>
 #include "destination.h"
 #include "../../logic/utils/utils.h"
 
