@@ -1,6 +1,6 @@
 #include "menu.h"
 #include "../utils/utils.h"
-#include <stdio.h>
+
 #include <stdlib.h>
 
 #define FIRST_OPTION 1
