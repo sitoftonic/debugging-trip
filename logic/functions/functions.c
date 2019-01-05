@@ -1,8 +1,6 @@
 #include "functions.h"
-#include "../../model/destination/destination.h"
 #include "../menu/menu.h"
 #include <stdlib.h>
-#include <memory.h>
 #include <math.h>
 
 void showAllDestinations(List *l) {
